@@ -1,0 +1,83 @@
+
+	Eslint Prettier ViteJS
+	
+		steps : 
+		
+			1. create vite project.
+			
+			2. npm i -D eslint.
+			
+			3. npm init @eslint/config.
+			
+			4. follow the instructions.
+			
+			5. create .vscode/settings.json and paste below code.
+
+			6. check and add linting rules in .eslintrc.cjs
+
+			7. react-hooks ( manually )
+
+				1. plugins: [..., 'react-hooks'],
+
+				2. rules: {
+					...,
+					"react-hooks/rules-of-hooks": "error",
+					"react-hooks/exhaustive-deps": "warn",
+				},
+
+
+		common rules ( optional ):
+
+			'linebreak-style': 0,
+			'react/react-in-jsx-scope': 0,
+			'import/no-extraneous-dependencies': 0,
+			'import/extensions': 0,
+			'no-console': 0,
+			'react-hooks/rules-of-hooks': 'error',
+			'react-hooks/exhaustive-deps': 'warn',
+			'max-len': 0,
+			'react/function-component-definition': [
+				2,
+				{
+					namedComponents: ['arrow-function'],
+					unnamedComponents: 'arrow-function',
+				},
+			],
+			settings: {
+				'import/resolver': {
+					alias: {
+					map: [
+						['@', './src'],
+					],
+					},
+				},
+			},
+
+		settings.json
+			{
+				// Settings for Eslint and Prettier
+				"editor.defaultFormatter": "esbenp.prettier-vscode",
+				"editor.formatOnSave": true,
+				"[javascript]": {
+					"editor.formatOnSave": false
+				},
+				"[javascriptreact]": {
+					"editor.formatOnSave": false
+				},
+				"editor.codeActionsOnSave": {
+					"source.fixAll": true
+				},
+				"eslint.alwaysShowStatus": true,
+				"eslint.validate": [
+					"javascript",
+					"javascriptreact",
+					"typescript",
+					"typescriptreact"
+				],
+				// Settings for Prettier
+				"prettier.useTabs": true,
+				"prettier.jsxSingleQuote": false,
+				"prettier.tabWidth": 2,
+				"prettier.arrowParens": "avoid",
+				"prettier.singleQuote": true
+			}
